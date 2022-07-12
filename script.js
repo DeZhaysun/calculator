@@ -15,3 +15,14 @@ function operate(a, b, sign) {
       return divide(a, b);
   }
 }
+
+const display = document.querySelector(".display");
+let no1 = display.innerHTML;
+
+function pressDigit(e) {
+  display.innerHTML += e.key;
+  no1 = parstInt(display.innerHTML);
+}
+
+const digits = document.querySelectorAll(".digit");
+digits.forEach((key) => key.addEventListener("click", pressDigit));
